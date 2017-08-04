@@ -1,8 +1,13 @@
 import React from 'react';
 import Main from './routes/Main';
 
-import '../App.css';
+import CSS from '../App.css';
 
-const App = () => (<Main/>);
+const App = () => (
+    <div>
+      <p className={CSS.header}>asdasdasdasd</p>
+      <Main/>
+    </div>
+);
 
 export default App;

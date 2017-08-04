@@ -139,6 +139,7 @@ module.exports = {
           /\.html$/,
           /\.(js|jsx)$/,
           /\.css$/,
+          /\.scss$/,
           /\.json$/,
           /\.bmp$/,
           /\.gif$/,
@@ -187,6 +188,8 @@ module.exports = {
             loader: require.resolve('css-loader'),
             options: {
               importLoaders: 1,
+              modules: true,
+              localIdentName: "[name]__[local]___[hash:base64:5]"
             },
           },
           {
@@ -211,6 +214,29 @@ module.exports = {
           },
         ],
       },
+
+      {
+        test: /\.scss$/,
+        include: paths.appSrc,
+        loaders: [
+          "style?sourceMap",
+          'css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]',
+          'resolve-url',
+          'sass?sourceMap'
+        ]
+      },
+
+//
+//      { test: /\.css$/, loader: 'style!css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]?sourceMap!resolve-url-loader' },
+//      // https://reactjsnews.com/isomorphic-react-in-real-life
+//      { test: /\.scss$/, loader: 'style!css?modules&importLoaders=3&localIdentName=[name]__[local]___[hash:base64:5]?sourceMap!postcss!resolve-url-loader!sass?sourceMap' },
+//      { test: /\.sass$/, loader: 'style!css?modules&importLoaders=3&localIdentName=[name]__[local]___[hash:base64:5]?sourceMap!postcss!resolve-url-loader!sass?indentedSyntax&sourceMap&sourceComments' },
+
+
+
+
+
+
       // ** STOP ** Are you adding a new loader?
       // Remember to add the new extension(s) to the "file" loader exclusion list.
     ],

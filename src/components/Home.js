@@ -4,6 +4,9 @@ import PropTypes from 'prop-types';
 
 import weatherActions from '../actions/weather-actions';
 
+import CSS from '../css/components/home.css';
+
+console.log(CSS);
 class Home extends Component {
   static propTypes = {
     weather: PropTypes.object.isRequired,
@@ -18,7 +21,7 @@ class Home extends Component {
     const {city, temp} = this.props.weather;
     return (
         <div>
-          <p>This is Home component</p>
+          <p className={CSS.p}>This is Home component</p>
           <p>Temperature in {city} - {temp}</p>
         </div>
     );
