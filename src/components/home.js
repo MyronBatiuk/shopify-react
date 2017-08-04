@@ -21,22 +21,27 @@ class Home extends Component {
     const {city, temp} = this.props.weather;
     return (
         <div>
-
+          <p>This is Home component</p>
+          <p>Grid example:</p>
           <Grid fluid>
             <Row>
-              <Col xs={6} md={3}>
-                Hello, world!
+              <Col xs={12} md={4}>
+                <div className={CSS.box}>
+                  Hello, world!
+                </div>
               </Col>
-              <Col xs={6} md={3}>
-                Hello, world!
+              <Col xs={12} md={4}>
+                <div className={CSS.box}>
+                  Hello, world!
+                </div>
               </Col>
-              <Col xs={6} md={3}>
-                Hello, world!
+              <Col xs={12} md={4}>
+                <div className={CSS.box}>
+                  Hello, world!
+                </div>
               </Col>
             </Row>
           </Grid>
-
-          <p className={CSS.exampleClass}>This is Home component</p>
           <p>Temperature in {city} - {temp}</p>
         </div>
     );
