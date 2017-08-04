@@ -182,6 +182,7 @@ module.exports = {
       // in development "style" loader enables hot editing of CSS.
       {
         test: /\.css$/,
+        include: /flexboxgrid/,
         use: [
           require.resolve('style-loader'),
           {
@@ -256,7 +257,6 @@ module.exports = {
                 sourceMap: true,
               }
             },
-//            require.resolve('resolve-url-loader')
           ]
       },
       // ** STOP ** Are you adding a new loader?

@@ -184,6 +184,7 @@ module.exports = {
       // in the main CSS file.
       {
         test: /\.css$/,
+        include: /flexboxgrid/,
         loader: ExtractTextPlugin.extract(
           Object.assign(
             {
