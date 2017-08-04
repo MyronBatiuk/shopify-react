@@ -138,6 +138,7 @@ module.exports = {
           /\.html$/,
           /\.(js|jsx)$/,
           /\.css$/,
+          /\.scss$/,
           /\.json$/,
           /\.bmp$/,
           /\.gif$/,
@@ -202,6 +203,7 @@ module.exports = {
                   options: {
                     // Necessary for external CSS imports to work
                     // https://github.com/facebookincubator/create-react-app/issues/2677
+                    sourceMap: true,
                     ident: 'postcss',
                     plugins: () => [
                       require('postcss-flexbugs-fixes'),
@@ -224,6 +226,58 @@ module.exports = {
         ),
         // Note: this won't work without `new ExtractTextPlugin()` in `plugins`.
       },
+
+      {
+        test: /\.scss$/,
+        loader: ExtractTextPlugin.extract(
+            Object.assign(
+                {
+                  fallback: require.resolve('style-loader'),
+                  use: [
+                    {
+                      loader: require.resolve('css-loader'),
+                      options: {
+                        modules: true,
+                        sourceMap: true,
+                        importLoaders: 3,
+                        localIdentName: '[name]__[local]___[hash:base64:5]'
+                      }
+                    },
+                    {
+                      loader: require.resolve('postcss-loader'),
+                      options: {
+                        // Necessary for external CSS imports to work
+                        // https://github.com/facebookincubator/create-react-app/issues/2677
+                        sourceMap: true,
+                        ident: 'postcss',
+                        plugins: () => [
+                          require('postcss-flexbugs-fixes'),
+                          autoprefixer({
+                            browsers: [
+                              '>1%',
+                              'last 4 versions',
+                              'Firefox ESR',
+                              'not ie < 9', // React doesn't support IE8 anyway
+                            ],
+                            flexbox: 'no-2009',
+                          }),
+                        ],
+                      },
+                    },
+                    {
+                      loader: require.resolve('sass-loader'),
+                      options: {
+                        sourceMap: true,
+                      }
+                    },
+                  ],
+                },
+                extractTextPluginOptions
+            )
+        ),
+        // Note: this won't work without `new ExtractTextPlugin()` in `plugins`.
+      },
+
       // ** STOP ** Are you adding a new loader?
       // Remember to add the new extension(s) to the "file" loader exclusion list.
     ],

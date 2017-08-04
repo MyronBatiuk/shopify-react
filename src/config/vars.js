@@ -1,0 +1,3 @@
+export default {
+  WEATHER_API_KEY: '8df2dfd624f698509c62395999680385',
+};

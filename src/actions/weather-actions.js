@@ -1,14 +1,13 @@
 import * as types from './action-types';
 import axios from 'axios';
 
-const API_KEY = '8df2dfd624f698509c62395999680385';
-const url = `http://api.openweathermap.org/data/2.5/weather?q=Cherkasy&units=metric&appid=${API_KEY}`;
+import vars from '../config/vars';
 
 export default {
   fetchWeather() {
-    const request = axios.get(url);
-
     return (dispatch) => {
+      const url = `http://api.openweathermap.org/data/2.5/weather?q=Cherkasy&units=metric&appid=${vars.WEATHER_API_KEY}`;
+      const request = axios.get(url);
       request.then(({data}) => {
         dispatch({
           type: types.FETCH_WEATHER,

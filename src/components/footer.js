@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom';
 class Footer extends Component {
   render() {
     return (
-        <header>
+        <footer>
           <nav>
             <ul>
               <li><Link to='/'>Home</Link></li>
@@ -14,7 +14,7 @@ class Footer extends Component {
               <li><Link to='/registration'>Registration</Link></li>
             </ul>
           </nav>
-        </header>
+        </footer>
     );
   }
 }

@@ -198,6 +198,7 @@ module.exports = {
               // Necessary for external CSS imports to work
               // https://github.com/facebookincubator/create-react-app/issues/2677
               ident: 'postcss',
+              sourceMap: true,
               plugins: () => [
                 require('postcss-flexbugs-fixes'),
                 autoprefixer({
@@ -217,26 +218,47 @@ module.exports = {
 
       {
         test: /\.scss$/,
-        include: paths.appSrc,
-        loaders: [
-          "style?sourceMap",
-          'css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]',
-          'resolve-url',
-          'sass?sourceMap'
-        ]
+          use: [
+            require.resolve('style-loader'),
+            {
+              loader: require.resolve('css-loader'),
+              options: {
+                modules: true,
+                sourceMap: true,
+                importLoaders: 3,
+                localIdentName: '[name]__[local]___[hash:base64:5]'
+              }
+            },
+            {
+              loader: require.resolve('postcss-loader'),
+              options: {
+                // Necessary for external CSS imports to work
+                // https://github.com/facebookincubator/create-react-app/issues/2677
+                sourceMap: true,
+                ident: 'postcss',
+                plugins: () => [
+                  require('postcss-flexbugs-fixes'),
+                  autoprefixer({
+                    browsers: [
+                      '>1%',
+                      'last 4 versions',
+                      'Firefox ESR',
+                      'not ie < 9', // React doesn't support IE8 anyway
+                    ],
+                    flexbox: 'no-2009',
+                  }),
+                ],
+              },
+            },
+            {
+              loader: require.resolve('sass-loader'),
+              options: {
+                sourceMap: true,
+              }
+            },
+//            require.resolve('resolve-url-loader')
+          ]
       },
-
-//
-//      { test: /\.css$/, loader: 'style!css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]?sourceMap!resolve-url-loader' },
-//      // https://reactjsnews.com/isomorphic-react-in-real-life
-//      { test: /\.scss$/, loader: 'style!css?modules&importLoaders=3&localIdentName=[name]__[local]___[hash:base64:5]?sourceMap!postcss!resolve-url-loader!sass?sourceMap' },
-//      { test: /\.sass$/, loader: 'style!css?modules&importLoaders=3&localIdentName=[name]__[local]___[hash:base64:5]?sourceMap!postcss!resolve-url-loader!sass?indentedSyntax&sourceMap&sourceComments' },
-
-
-
-
-
-
       // ** STOP ** Are you adding a new loader?
       // Remember to add the new extension(s) to the "file" loader exclusion list.
     ],
