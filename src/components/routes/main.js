@@ -1,7 +1,7 @@
 import React from 'react';
 import {Route, Switch} from 'react-router-dom';
 
-import Home from '../home';
+import Home from '../../containers/home';
 import Admin from '../admin';
 import Header from '../header';
 import Footer from '../footer';
