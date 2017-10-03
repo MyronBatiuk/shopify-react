@@ -145,20 +145,56 @@ module.exports = {
           /\.jpe?g$/,
           /\.png$/,
         ],
-        loader: require.resolve('file-loader'),
-        options: {
-          name: 'static/media/[name].[hash:8].[ext]',
-        },
+        use: [
+          {
+            loader: require.resolve('file-loader'),
+            options: {
+              importLoaders: 2,
+              name: 'static/media/[name].[hash:8].[ext]',
+            },
+          },
+          {
+            loader: require.resolve('image-webpack-loader'),
+            options: {
+              optipng: {
+                optimizationLevel: 7,
+              },
+              gifsicle: {
+                interlaced: false,
+              },
+              pngquant: {quality: '65-90', speed: 4},
+              mozjpeg: {quality: 80},
+            },
+          },
+        ],
       },
       // "url" loader works just like "file" loader but it also embeds
       // assets smaller than specified size as data URLs to avoid requests.
       {
         test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/],
-        loader: require.resolve('url-loader'),
-        options: {
-          limit: 10000,
-          name: 'static/media/[name].[hash:8].[ext]',
-        },
+        use: [
+          {
+            loader: require.resolve('url-loader'),
+            options: {
+              importLoaders: 1,
+              limit: 10000,
+              name: 'static/media/[name].[hash:8].[ext]',
+            },
+          },
+          {
+            loader: require.resolve('image-webpack-loader'),
+            options: {
+              optipng: {
+                optimizationLevel: 7,
+              },
+              gifsicle: {
+                interlaced: false,
+              },
+              pngquant: {quality: '65-90', speed: 4},
+              mozjpeg: {quality: 80},
+            },
+          },
+        ],
       },
       // Process JS with Babel.
       {
@@ -197,9 +233,8 @@ module.exports = {
                   loader: require.resolve('css-loader'),
                   options: {
                     importLoaders: 1,
-                    modules: true,
                     minimize: true,
-                    sourceMap: true,
+                    sourceMap: false,
                   },
                 },
                 {
@@ -207,7 +242,7 @@ module.exports = {
                   options: {
                     // Necessary for external CSS imports to work
                     // https://github.com/facebookincubator/create-react-app/issues/2677
-                    sourceMap: true,
+                    sourceMap: false,
                     ident: 'postcss',
                     plugins: () => [
                       require('postcss-flexbugs-fixes'),
@@ -242,7 +277,7 @@ module.exports = {
                       loader: require.resolve('css-loader'),
                       options: {
                         modules: true,
-                        sourceMap: true,
+                        sourceMap: false,
                         importLoaders: 3,
                         localIdentName: '[name]__[local]___[hash:base64:5]'
                       }
@@ -252,7 +287,7 @@ module.exports = {
                       options: {
                         // Necessary for external CSS imports to work
                         // https://github.com/facebookincubator/create-react-app/issues/2677
-                        sourceMap: true,
+                        sourceMap: false,
                         ident: 'postcss',
                         plugins: () => [
                           require('postcss-flexbugs-fixes'),
@@ -271,7 +306,7 @@ module.exports = {
                     {
                       loader: require.resolve('sass-loader'),
                       options: {
-                        sourceMap: true,
+                        sourceMap: false,
                       }
                     },
                   ],
@@ -331,7 +366,7 @@ module.exports = {
         // https://github.com/facebookincubator/create-react-app/issues/2488
         ascii_only: true,
       },
-      sourceMap: true,
+      sourceMap: false,
     }),
     // Note: this won't work without ExtractTextPlugin.extract(..) in `loaders`.
     new ExtractTextPlugin({
