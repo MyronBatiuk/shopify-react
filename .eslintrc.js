@@ -41,7 +41,7 @@ module.exports = {
         "react/require-render-return": 2,
         "react/sort-comp": 2,
         // miscellaneous
-        "indent": [ "error", 2],
+        "indent": [ "error", 2, { "SwitchCase": 1 }],
         "linebreak-style": [ "error", "unix"],
         "quotes": [ "error", "single" ],
         "semi": [ "error", "always" ]
