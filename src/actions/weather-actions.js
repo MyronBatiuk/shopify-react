@@ -1,7 +1,7 @@
 import types from './action-types';
 import axios from 'axios';
 
-import vars from '../config/vars';
+import vars from 'Config/vars';
 
 export default {
   fetchWeather: () => (dispatch) => {
