@@ -9,24 +9,25 @@ import registerServiceWorker from './registerServiceWorker';
 import './css/global.css';
 
 ReactDOM.render(
-    <Provider store={store}>
-      <Router>
-        <App />
-      </Router>
-    </Provider>,
-    document.getElementById('root'),
+  <Provider store={store}>
+    <Router>
+      <App />
+    </Router>
+  </Provider>,
+  document.getElementById('root'),
 );
-
+/* eslint-disable */
 if (module.hot) {
   module.hot.accept('./components/app', () => {
 
     ReactDOM.render(
-        <Provider store={store}>
-          <Router>
-            <App />
-          </Router>
-        </Provider>,
-        document.getElementById('root'));
+      <Provider store={store}>
+        <Router>
+          <App />
+        </Router>
+      </Provider>,
+      document.getElementById('root'));
   });
 }
+/* eslint-enable */
 registerServiceWorker();

@@ -20,30 +20,30 @@ class Home extends Component {
   render() {
     const {city, temp} = this.props.weather;
     return (
-        <div>
-          <p>This is Home component</p>
-          <p>Grid example:</p>
-          <Grid fluid>
-            <Row>
-              <Col xs={12} md={4}>
-                <div className={CSS.box}>
+      <div>
+        <p>This is Home component</p>
+        <p>Grid example:</p>
+        <Grid fluid>
+          <Row>
+            <Col xs={12} md={4}>
+              <div className={CSS.box}>
                   Hello, world!
-                </div>
-              </Col>
-              <Col xs={12} md={4}>
-                <div className={CSS.box}>
+              </div>
+            </Col>
+            <Col xs={12} md={4}>
+              <div className={CSS.box}>
                   Hello, world!
-                </div>
-              </Col>
-              <Col xs={12} md={4}>
-                <div className={CSS.box}>
+              </div>
+            </Col>
+            <Col xs={12} md={4}>
+              <div className={CSS.box}>
                   Hello, world!
-                </div>
-              </Col>
-            </Row>
-          </Grid>
-          <p>Temperature in {city} - {temp}</p>
-        </div>
+              </div>
+            </Col>
+          </Row>
+        </Grid>
+        <p>Temperature in {city} - {temp}</p>
+      </div>
     );
   }
 }

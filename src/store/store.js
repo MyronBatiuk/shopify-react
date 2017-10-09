@@ -6,26 +6,27 @@ import initialState from './initial-state';
 const middleware = [
   thunk,
 ];
-
+// eslint-disable-next-line 
 const composeEnhancers = process.env.NODE_ENV !== 'production' &&
     window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const enhancer = composeEnhancers(
-    applyMiddleware(...middleware),
+  applyMiddleware(...middleware),
 );
 
 const store = createStore(
-    rootReducer,
-    initialState,
-    enhancer,
+  rootReducer,
+  initialState,
+  enhancer,
 );
-
-if (process.env.NODE_ENV !== "production") {
+/* eslint-disable */
+if (process.env.NODE_ENV !== 'production') {
   if (module.hot) {
     module.hot.accept('../reducers', () => {
-      store.replaceReducer(rootReducer)
-    })
+      store.replaceReducer(rootReducer);
+    });
   }
 }
+/* eslint-enable */
 
 export default store;
