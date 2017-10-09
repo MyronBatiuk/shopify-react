@@ -10,11 +10,12 @@ class Footer extends Component {
       <footer className={CSS.footer}>
         <nav>
           <ul className={CSS.menu}>
-            <li className={CSS.item}><Link to='/'>Home</Link></li>
-            <li className={CSS.item}><Link to='/admin'>Admin</Link></li>
-            <li className={CSS.item}><Link to='/login'>Login</Link></li>
-            <li className={CSS.item}><Link
-              to='/registration'>Registration</Link></li>
+            <li className={CSS.item}><Link to="/">Home</Link></li>
+            <li className={CSS.item}><Link to="/admin">Admin</Link></li>
+            <li className={CSS.item}><Link to="/login">Login</Link></li>
+            <li className={CSS.item}>
+              <Link to="/registration">Registration</Link>
+            </li>
           </ul>
         </nav>
       </footer>

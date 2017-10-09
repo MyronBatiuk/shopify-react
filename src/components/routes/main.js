@@ -13,11 +13,12 @@ const DefaultLayout = ({component: Component, ...rest}) => {
   return (
     <Route {...rest} render={props => (
       <div className="DefaultLayout">
-        <Header/>
+        <Header />
         <Component {...props} />
-        <Footer/>
+        <Footer />
       </div>
-    )}/>
+    )}
+    />
   );
 };
 
@@ -27,20 +28,22 @@ const AdminLayout = ({component: Component, ...rest}) => {
       <div className="DefaultLayout">
         <Component {...props} />
       </div>
-    )}/>
+    )}
+    />
   );
 };
 
 const Main = () => (
   <div>
     <Switch>
-      <DefaultLayout exact path="/" component={Home}/>
-      <AdminLayout exact path="/admin" component={Admin}/>
-      <DefaultLayout exact path="/login" component={Login}/>
-      <DefaultLayout exact path="/registration" component={Registration}/>
+      <DefaultLayout exact path="/" component={Home} />
+      <AdminLayout exact path="/admin" component={Admin} />
+      <DefaultLayout exact path="/login" component={Login} />
+      <DefaultLayout exact path="/registration" component={Registration} />
       <Route render={() => {
         return <p>Not Found</p>;
-      }}/>
+      }}
+      />
     </Switch>
   </div>
 );

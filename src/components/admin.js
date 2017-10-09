@@ -6,7 +6,7 @@ class Admin extends Component {
     return (
       <div>
         <p>This is an Admin component</p>
-        <Link to='/'>Back to the Home page</Link>
+        <Link to="/">Back to the Home page</Link>
       </div>
     );
   }

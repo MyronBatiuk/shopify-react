@@ -2,4 +2,4 @@ const initialState = {
   weather: {},
 };
 
-export default  initialState;
+export default initialState;
