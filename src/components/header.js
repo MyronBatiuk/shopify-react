@@ -1,7 +1,7 @@
-import React, {Component} from 'react';
-import {Link} from 'react-router-dom';
+import React, {Component} from 'react'
+import {Link} from 'react-router-dom'
 
-import CSS from '../css/components/header.scss';
+import CSS from '../css/components/header.scss'
 
 class Header extends Component {
   render() {
@@ -16,8 +16,8 @@ class Header extends Component {
           </ul>
         </nav>
       </header>
-    );
+    )
   }
 }
 
-export default Header;
+export default Header

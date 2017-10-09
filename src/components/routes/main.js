@@ -1,13 +1,13 @@
-import React from 'react';
-import {Route, Switch} from 'react-router-dom';
+import React from 'react'
+import {Route, Switch} from 'react-router-dom'
 
-import Home from '../../containers/home';
-import Admin from '../admin';
-import Header from '../header';
-import Footer from '../footer';
+import Home from '../../containers/home'
+import Admin from '../admin'
+import Header from '../header'
+import Footer from '../footer'
 
-import Login from '../auth/login';
-import Registration from '../auth/registration';
+import Login from '../auth/login'
+import Registration from '../auth/registration'
 
 const DefaultLayout = ({component: Component, ...rest}) => {
   return (
@@ -19,8 +19,8 @@ const DefaultLayout = ({component: Component, ...rest}) => {
       </div>
     )}
     />
-  );
-};
+  )
+}
 
 const AdminLayout = ({component: Component, ...rest}) => {
   return (
@@ -30,8 +30,8 @@ const AdminLayout = ({component: Component, ...rest}) => {
       </div>
     )}
     />
-  );
-};
+  )
+}
 
 const Main = () => (
   <div>
@@ -41,14 +41,14 @@ const Main = () => (
       <DefaultLayout exact path="/login" component={Login} />
       <DefaultLayout exact path="/registration" component={Registration} />
       <Route render={() => {
-        return <p>Not Found</p>;
+        return <p>Not Found</p>
       }}
       />
     </Switch>
   </div>
-);
+)
 
-export default Main;
+export default Main
 
 
 

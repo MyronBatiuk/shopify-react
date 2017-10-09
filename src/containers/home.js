@@ -1,11 +1,11 @@
-import React, {Component} from 'react';
-import {connect} from 'react-redux';
-import PropTypes from 'prop-types';
-import { Grid, Row, Col } from 'react-flexbox-grid';
+import React, {Component} from 'react'
+import {connect} from 'react-redux'
+import PropTypes from 'prop-types'
+import { Grid, Row, Col } from 'react-flexbox-grid'
 
-import weatherActions from '../actions/weather-actions';
+import weatherActions from '../actions/weather-actions'
 
-import CSS from '../css/components/home.scss';
+import CSS from '../css/components/home.scss'
 
 class Home extends Component {
   static propTypes = {
@@ -14,11 +14,11 @@ class Home extends Component {
   };
 
   componentDidMount() {
-    this.props.fetchWeather();
+    this.props.fetchWeather()
   }
 
   render() {
-    const {city, temp} = this.props.weather;
+    const {city, temp} = this.props.weather
     return (
       <div>
         <p>This is Home component</p>
@@ -44,12 +44,12 @@ class Home extends Component {
         </Grid>
         <p>Temperature in {city} - {temp}</p>
       </div>
-    );
+    )
   }
 }
 
 function mapStateToProps({weather}) {
-  return {weather};
+  return {weather}
 }
 
-export default connect(mapStateToProps, weatherActions)(Home);
+export default connect(mapStateToProps, weatherActions)(Home)

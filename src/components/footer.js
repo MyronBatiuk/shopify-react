@@ -1,7 +1,7 @@
-import React, {Component} from 'react';
-import {Link} from 'react-router-dom';
+import React, {Component} from 'react'
+import {Link} from 'react-router-dom'
 
-import CSS from '../css/components/footer.scss';
+import CSS from '../css/components/footer.scss'
 
 
 class Footer extends Component {
@@ -19,8 +19,8 @@ class Footer extends Component {
           </ul>
         </nav>
       </footer>
-    );
+    )
   }
 }
 
-export default Footer;
+export default Footer
