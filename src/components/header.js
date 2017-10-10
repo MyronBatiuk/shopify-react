@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import {Link} from 'react-router-dom'
 
-import CSS from '../css/components/header.scss'
+import CSS from 'SCSS/components/header.scss'
 
 class Header extends Component {
   render() {
