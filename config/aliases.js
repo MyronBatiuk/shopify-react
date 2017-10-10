@@ -3,9 +3,9 @@
 const path = require('path')
 
 module.exports = {
-  Actions: path.resolve(__dirname, '../src/actions'), 
-  Components: path.resolve(__dirname, '../src/components'),
-  Config: path.resolve(__dirname, '../src/config'), 
+  Actions: path.resolve(__dirname, '../src/Actions'), 
+  Components: path.resolve(__dirname, '../src/Components'),
+  Config: path.resolve(__dirname, '../src/Config'), 
   Containers: path.resolve(__dirname, '../src/containers'), 
   SCSS: path.resolve(__dirname, '../src/css'),               
   // Support React Native Web
