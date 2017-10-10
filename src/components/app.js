@@ -1,6 +1,6 @@
-import React from 'react';
-import Main from './routes/main';
+import React from 'react'
+import Main from './routes/main'
 
-const App = () => (<Main/>);
+const App = () => (<Main />)
 
-export default App;
+export default App
