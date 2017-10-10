@@ -57,7 +57,7 @@
     "build": "node scripts/build.js",
     "build-dev": "node scripts/build-dev.js",
     "test": "node scripts/test.js --env=jsdom",
-    "lint": "echo '[pre-commit]: Running eslint \n' && eslint -c .eslintrc.js src"
+    "lint": "echo '[pre-commit]: Running eslint \n' && eslint -c .eslintrc.js ./"
   },
   "pre-commit": [
     "lint"

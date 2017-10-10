@@ -11,7 +11,7 @@ class Home extends Component {
   static propTypes = {
     weather: PropTypes.object.isRequired,
     fetchWeather: PropTypes.func.isRequired,
-  };
+  }
 
   componentDidMount() {
     this.props.fetchWeather()

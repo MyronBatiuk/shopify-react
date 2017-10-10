@@ -1,17 +1,18 @@
 'use strict'
+/* eslint no-undef: 0 */
 
-const autoprefixer = require('autoprefixer');
-const path = require('path');
-const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
-const InterpolateHtmlPlugin = require('react-dev-utils/InterpolateHtmlPlugin');
-const WatchMissingNodeModulesPlugin = require('react-dev-utils/WatchMissingNodeModulesPlugin');
-const eslintFormatter = require('react-dev-utils/eslintFormatter');
-const ModuleScopePlugin = require('react-dev-utils/ModuleScopePlugin');
-const getClientEnvironment = require('./env');
-const paths = require('./paths');
-const aliases = require('./aliases');
+const autoprefixer = require('autoprefixer')
+const path = require('path')
+const webpack = require('webpack')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin')
+const InterpolateHtmlPlugin = require('react-dev-utils/InterpolateHtmlPlugin')
+const WatchMissingNodeModulesPlugin = require('react-dev-utils/WatchMissingNodeModulesPlugin')
+const eslintFormatter = require('react-dev-utils/eslintFormatter')
+const ModuleScopePlugin = require('react-dev-utils/ModuleScopePlugin')
+const getClientEnvironment = require('./env')
+const paths = require('./paths')
+const aliases = require('./aliases')
 
 // Webpack uses `publicPath` to determine where the app is being served from.
 // In development, we always serve from the root. This makes config easier.

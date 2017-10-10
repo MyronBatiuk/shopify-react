@@ -8,7 +8,7 @@ const middleware = [
 ]
 /* eslint-disable */
 const composeEnhancers = process.env.NODE_ENV !== 'production' &&
-    window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+    window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 /* eslint-enable */
 const enhancer = composeEnhancers(
   applyMiddleware(...middleware),
@@ -23,8 +23,8 @@ const store = createStore(
 if (process.env.NODE_ENV !== 'production') {
   if (module.hot) {
     module.hot.accept('../reducers', () => {
-      store.replaceReducer(rootReducer);
-    });
+      store.replaceReducer(rootReducer)
+    })
   }
 }
 /* eslint-enable */

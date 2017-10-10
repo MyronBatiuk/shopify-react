@@ -26,8 +26,9 @@ if (module.hot) {
           <App />
         </Router>
       </Provider>,
-      document.getElementById('root'));
-  });
+      document.getElementById('root')
+    )
+  })
 }
 /* eslint-enable */
 registerServiceWorker()
