@@ -1,13 +1,13 @@
 import React from 'react';
 import {Route, Switch} from 'react-router-dom';
 
-import Home from '../../containers/home';
-import Admin from '../admin';
-import Header from '../header';
-import Footer from '../footer';
+import Home from 'Containers/home';
+import Admin from 'Components/admin';
+import Header from 'Components/header';
+import Footer from 'Components/footer';
 
-import Login from '../auth/login';
-import Registration from '../auth/registration';
+import Login from 'Components/auth/login';
+import Registration from 'Components/auth/registration';
 
 const DefaultLayout = ({component: Component, ...rest}) => {
   return (

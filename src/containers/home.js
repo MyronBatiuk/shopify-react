@@ -3,9 +3,9 @@ import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 
-import weatherActions from '../actions/weather-actions';
+import weatherActions from 'Actions/weather-actions';
 
-import CSS from '../css/components/home.scss';
+import CSS from 'SCSS/components/home.scss';
 
 class Home extends Component {
   static propTypes = {
