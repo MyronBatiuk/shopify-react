@@ -9,8 +9,8 @@ import {
 import Header from './Layout/Header'
 import Footer from './Layout/Footer'
 
-import HomeComponent from 'Containers/Home'
-import AdminComponent from 'Containers/Admin'
+import HomeComponent from '../Containers/Home'
+import AdminComponent from '../Containers/Admin'
 import LoginComponent from './Auth/Login'
 import RegisterComponent from './Auth/Register'
 

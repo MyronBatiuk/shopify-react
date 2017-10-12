@@ -23,7 +23,6 @@ module.exports = {
         "react/react-in-jsx-scope": 2,
         // JS styleguide: https://github.com/airbnb/javascript/tree/master/react
         "react/jsx-pascal-case": 2,
-        "react/jsx-closing-bracket-location": 2,
         "react/jsx-closing-tag-location": 2,
         "jsx-quotes": 2,
         "react/jsx-tag-spacing": 2,
