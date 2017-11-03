@@ -2,8 +2,8 @@
 /* eslint no-undef: 0 */
 
 
-const errorOverlayMiddleware = require('react-dev-utils/errorOverlayMiddleware');
-const noopServiceWorkerMiddleware = require('react-dev-utils/noopServiceWorkerMiddleware');
+const errorOverlayMiddleware = require('react-dev-utils/errorOverlayMiddleware')
+const noopServiceWorkerMiddleware = require('react-dev-utils/noopServiceWorkerMiddleware')
 const config = require('./webpack.config.local')
 const paths = require('./paths')
 
