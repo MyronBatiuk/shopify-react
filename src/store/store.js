@@ -1,7 +1,6 @@
 import {createStore, applyMiddleware, compose} from 'redux'
 import thunk from 'redux-thunk'
 import rootReducer from '../reducers/index'
-import initialState from './initial-state'
 
 const middleware = [
   thunk,
@@ -16,7 +15,6 @@ const enhancer = composeEnhancers(
 
 const store = createStore(
   rootReducer,
-  initialState,
   enhancer,
 )
 /* eslint-disable */

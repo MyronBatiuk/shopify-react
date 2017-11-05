@@ -1,5 +1,5 @@
 import locationHelperBuilder from 'redux-auth-wrapper/history4/locationHelper'
-import { connectedRouterRedirect } from 'redux-auth-wrapper/history4/redirect'
+import {connectedRouterRedirect} from 'redux-auth-wrapper/history4/redirect'
 import connectedAuthWrapper from 'redux-auth-wrapper/connectedAuthWrapper'
 
 import Loading from './Loading'
@@ -9,7 +9,7 @@ const locationHelper = locationHelperBuilder({})
 const userIsAuthenticatedDefaults = {
   authenticatedSelector: state => state.user.data !== null,
   authenticatingSelector: state => state.user.isLoading,
-  wrapperDisplayName: 'UserIsAuthenticated'
+  wrapperDisplayName: 'UserIsAuthenticated',
 }
 
 export const userIsAuthenticated = connectedAuthWrapper(userIsAuthenticatedDefaults)
@@ -17,7 +17,7 @@ export const userIsAuthenticated = connectedAuthWrapper(userIsAuthenticatedDefau
 export const userIsAuthenticatedRedirect = connectedRouterRedirect({
   ...userIsAuthenticatedDefaults,
   AuthenticatingComponent: Loading,
-  redirectPath: '/login'
+  redirectPath: '/login',
 })
 
 export const userIsAdminRedirect = connectedRouterRedirect({
@@ -25,13 +25,13 @@ export const userIsAdminRedirect = connectedRouterRedirect({
   allowRedirectBack: false,
   authenticatedSelector: state => state.user.data !== null && state.user.data.isAdmin,
   predicate: user => user.isAdmin,
-  wrapperDisplayName: 'UserIsAdmin'
+  wrapperDisplayName: 'UserIsAdmin',
 })
 
 const userIsNotAuthenticatedDefaults = {
   // Want to redirect the user when they are done loading and authenticated
   authenticatedSelector: state => state.user.data === null && state.user.isLoading === false,
-  wrapperDisplayName: 'UserIsNotAuthenticated'
+  wrapperDisplayName: 'UserIsNotAuthenticated',
 }
 
 export const userIsNotAuthenticated = connectedAuthWrapper(userIsNotAuthenticatedDefaults)
@@ -39,5 +39,5 @@ export const userIsNotAuthenticated = connectedAuthWrapper(userIsNotAuthenticate
 export const userIsNotAuthenticatedRedirect = connectedRouterRedirect({
   ...userIsNotAuthenticatedDefaults,
   redirectPath: (state, ownProps) => locationHelper.getRedirectQueryParam(ownProps) || '/',
-  allowRedirectBack: false
+  allowRedirectBack: false,
 })
