@@ -1,10 +1,10 @@
 import weather from './weather'
 import user from './user'
-import { combineReducers } from 'redux'
+import {combineReducers} from 'redux'
 
 const rootReducer = combineReducers({
   weather,
-  user
+  user,
 })
 
 export default rootReducer
