@@ -1,0 +1,180 @@
+@import '../config/variables';
+@import '../config/mixins';
+@import '../global/icons';
+
+.btn {
+  display: inline-block;
+  min-width: rem(180);
+  max-width: 80%;
+  padding: rem(8) rem(15);
+  font-family: $southwest-sans-w01;
+  font-size: rem(16);
+  font-weight: 500;
+  line-height: 1.25;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  user-select: none;
+  border: rem(3) solid transparent;
+  cursor: pointer;
+  border-radius: rem(5);
+  transition: all .2s ease-in-out;
+  &:disabled {
+    cursor: not-allowed;
+  }
+
+  @include media-breakpoint-up(md) {
+    max-width: none;
+    font-size: rem(18);
+    padding: rem(11) rem(30);
+  }
+}
+
+.btnShort {
+  min-width: 0;
+  padding: rem(11) rem(15);
+}
+
+.btnSecondary {
+  @extend .btn;
+  color: $color-torea-bay;
+  background: rgba(255, 255, 255, .35);
+  border: rem(3) solid $color-torea-bay;
+  transition: all .2s ease-in-out;
+  &:active,
+  &:hover {
+    color: $color-lucky-point;
+    border: rem(3) solid $color-lucky-point;
+    border-radius: rem(5);
+  }
+  &.btnShort {
+    @extend .btnShort;
+  }
+}
+
+.btnFb {
+  @extend .btn;
+  width: 100%;
+  color: $color-white;
+  background-color: $color-chambray;
+  &:active,
+  &:hover {
+    background-color: darken($color-chambray, 5%);
+  }
+
+  @include media-breakpoint-up(sm) {
+    min-width: rem(285);
+  }
+
+  @include media-breakpoint-up(md) {
+    width: auto;
+  }
+  &.btnShort {
+    @extend .btnShort;
+  }
+}
+
+.btnTwitter {
+  @extend .btn;
+  width: 100%;
+  color: $color-white;
+  background-color: $color-twitter-blue;
+  &:active,
+  &:hover {
+    background-color: darken($color-twitter-blue, 5%);
+  }
+
+  @include media-breakpoint-up(sm) {
+    min-width: rem(285);
+  }
+
+  @include media-breakpoint-up(md) {
+    width: auto;
+  }
+  &.btnShort {
+    @extend .btnShort;
+  }
+}
+
+.btnPrimary {
+  @extend .btn;
+  color: $color-white;
+  background-color: $color-tory-blue;
+  &:active,
+  &:hover {
+    background-color: $color-lucky-point;
+  }
+
+  &:disabled {
+    background-color: $color-dusty-gray;
+  }
+  &.btnShort {
+    @extend .btnShort;
+  }
+}
+
+.btnError {
+  @extend .btn;
+  color: $color-white;
+  background-color: $color-monza;
+  &:active,
+  &:hover {
+    background-color: darken($color-monza, 5%);
+  }
+
+  &:disabled {
+    background-color: $color-dusty-gray;
+  }
+  &.btnShort {
+    @extend .btnShort;
+  }
+}
+
+.btnSuccess {
+  @extend .btn;
+  color: $color-white;
+  background-color: $color-green;
+  &:active,
+  &:hover {
+    background-color: darken($color-green, 5%);
+  }
+
+  &:disabled {
+    background-color: $color-deep-silver;
+  }
+  &.btnShort {
+    @extend .btnShort;
+  }
+}
+
+.btnLink {
+  @extend .btn;
+  color: $color-torea-bay;
+  background-color: transparent;
+  &:active,
+  &:hover {
+    text-decoration: underline;
+  }
+  &.btnShort {
+    @extend .btnShort;
+  }
+}
+
+.fbSendBtn {
+  width: rem(50);
+  height: rem(50);
+  padding: rem(4) 0 0;
+  border: rem(3) solid transparent;
+  background-color: $color-chambray;
+  cursor: pointer;
+  border-radius: rem(5);
+  font-size: rem(36);
+  text-align: center;
+  transition: all .2s ease-in-out;
+  vertical-align: middle;
+  user-select: none;
+  &:active,
+  &:hover {
+    background-color: darken($color-chambray, 5%);
+  }
+}

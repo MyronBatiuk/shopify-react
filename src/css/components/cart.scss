@@ -1,0 +1,202 @@
+.container {
+  display: none;
+  &.open {
+    display: block;
+  }
+}
+
+.overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.cart {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  z-index: 11;
+  right: 0;
+  height: 100%;
+  width: 350px;
+  background-color: white;
+  border-left: 1px solid #e5e5e5;
+}
+
+.close {
+  position: absolute;
+  right: 9px;
+  top: 8px;
+  font-size: 35px;
+  color: #999;
+  border: none;
+  background: transparent;
+  transition: transform 100ms ease;
+  cursor: pointer;
+}
+
+.header {
+  padding: 20px;
+  border-bottom: 1px solid #e5e5e5;
+  flex: 0 0 auto;
+}
+
+.items {
+  flex: 1 0 auto;
+  margin: 0;
+  padding: 20px;
+}
+
+.footer {
+  padding: 20px;
+  border-top: 1px solid #e5e5e5;
+  flex: 0 0 auto;
+}
+
+.itemContent {
+  padding-left: 75px;
+}
+
+.addInfo {
+  font-size: 13px;
+  text-align: center;
+  margin: 10px 0 0;
+}
+
+.checkoutBtn {
+  margin-top: 20px;
+  display: block;
+  width: 100%;
+}
+
+.info {
+  padding: 15px 20px 10px;
+}
+
+.subtotal {
+  float: left;
+  text-transform: uppercase;
+  font-size: 11px;
+}
+
+.subtotalPrice {
+  float: right;
+  margin-left: 5px;
+  font-size: 16px;
+  color: black;
+}
+
+/* LINE ITEMS
+ * ============================== */
+.item {
+  margin-bottom: 20px;
+  overflow: hidden;
+  backface-visibility: visible;
+  min-height: 65px;
+  position: relative;
+  opacity: 1;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.image {
+  width: 65px;
+  height: 65px;
+  border-radius: 3px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-color: #e5e5e5;
+  position: absolute;
+}
+
+.content {
+  padding: 0 5px;
+  width: 100%;
+}
+
+.row {
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 5px;
+  position: relative;
+}
+
+.option {
+  float: right;
+  font-weight: bold;
+  font-size: 11px;
+  line-height: 17px;
+  color: #767676;
+}
+
+.title {
+  color: #4E5665;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.price {
+  line-height: 23px;
+  float: right;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.wrapper {
+  border: 1px solid #767676;
+  float: left;
+  border-radius: 3px;
+}
+
+.updateQuantityBtn {
+  color: #767676;
+  display: block;
+  float: left;
+  height: 21px;
+  line-height: 16px;
+  font-family: monospace;
+  width: 25px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  box-shadow: none;
+  cursor: pointer;
+  font-size: 18px;
+  text-align: center;
+}
+
+.quantity {
+  color: black;
+  width: 38px;
+  height: 21px;
+  line-height: 23px;
+  font-size: 15px;
+  border: none;
+  text-align: center;
+  -moz-appearance: textfield;
+  background: transparent;
+  border-left: 1px solid #767676;
+  border-right: 1px solid #767676;
+  display: block;
+  float: left;
+  padding: 0;
+  border-radius: 0;
+}
+
+.removeBtn {
+  position: absolute;
+  top: -4px;
+  right: 0;
+  border: 0;
+  background: 0;
+  font-size: 20px;
+  opacity: 0.5;
+  &:hover {
+    opacity: 1;
+    cursor: pointer;
+  }
+}

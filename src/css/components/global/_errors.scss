@@ -1,0 +1,21 @@
+@import '../config/variables';
+
+.error {
+  margin-bottom: rem(24);
+  padding: rem(11) rem(20);
+  font-size: rem(18);
+  font-weight: 500;
+  line-height: 1.25;
+  text-align: center;
+  border: rem(3) solid transparent;
+  vertical-align: middle;
+  user-select: none;
+  text-transform: uppercase;
+  background-color: $color-monza;
+  border-radius: rem(5);
+  color: $color-white;
+
+  .message {
+    display: inline-block;
+  }
+}

@@ -1,0 +1,61 @@
+@import "../config/variables";
+
+.frame {
+  max-width: rem(800);
+  margin: 0 auto;
+  padding: rem(20) rem(15) rem(20);
+  background-color: $bg-frame;
+
+  .formControl,
+  .customControlIndicator {
+    background-color: $input-bg;
+  }
+
+  .successMessage {
+    margin-bottom: rem(200);
+  }
+}
+
+.frameBody {
+  max-width: rem(460);
+  margin: 0 auto;
+
+  .formWrapper {
+    max-width: rem(460);
+    margin: 0 auto;
+  }
+}
+
+.heading {
+  margin: 0 0 rem(10);
+  font-size: rem(20);
+  font-weight: 500;
+}
+
+.description {
+  margin: 0;
+  font-size: rem(14);
+  line-height: rem(25);
+}
+
+@include media-breakpoint-up(md) {
+  .frame {
+    max-width: rem(800);
+    margin: 0 auto;
+    padding: rem(30) rem(20) rem(45);
+    background-color: $bg-frame;
+
+    .successMessage {
+      margin-bottom: rem(270);
+    }
+  }
+
+  .heading {
+    font-size: rem(36);
+  }
+
+  .description {
+    margin: rem(11) 0 rem(16);
+    font-size: rem(16);
+  }
+}

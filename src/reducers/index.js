@@ -1,9 +1,9 @@
-import weather from './weather'
 import user from './user'
+import data from './data'
 import {combineReducers} from 'redux'
 
 const rootReducer = combineReducers({
-  weather,
+  data,
   user,
 })
 

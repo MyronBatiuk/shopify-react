@@ -1,0 +1,61 @@
+$base-font-size: 16px;
+$line-height: 1.15;
+
+// ** Fonts **
+$southwest-sans: "Southwest Sans", sans-serif;
+$southwest-sans-w01: "Southwest Sans W01", sans-serif;
+
+@import "mixins";
+
+// ** Grid vars **
+$grid-breakpoints: (
+        xs: 0,
+        sm: 576px,
+        md: 768px,
+        lg: 992px,
+        xl: 1200px
+);
+
+// ** Forms **
+$input-bg: rgba(255, 255, 255, 0.76);
+
+// ** Sizes **
+$border-radius-btn: rem(5);
+$border-radius-input: rem(8);
+$border-radius-checkbox: rem(4);
+
+// ** Colors **
+$color-white: rgb(255, 255, 255);
+$color-black: #000000;
+$color-torea-bay: #0d398c;
+$color-lucky-point: #16266b;
+$color-alto: #d8d8d8;
+$color-alto-light: #dadada;
+$color-dusty-gray: rgb(153, 153, 153);
+$color-monsoon: #888788;
+$color-dove-gray: #666666;
+$color-monza: #D0021B;
+$color-green: #009F49;
+$color-salem: #139139;
+$color-tory-blue: #0D4BA0;
+$color-deep-silver: #5E7E95;
+$color-chambray: #3B5998;
+$color-royal-blue: #3b7adb;
+$color-hawkes-blue: #c6dafc;
+$color-mystic: #dbe3e9;
+$color-close-white: #fefefe;
+$color-geyser: #d6dee5;
+$color-black-squeeze: #FCFDFE;
+$color-tundora: #444444;
+$color-twitter-blue: #4099FF;
+$color-polo-blue: #8ea5cc;
+$color-cerulean: rgb(0, 169, 224);
+$color-havelock-blue: rgb(73, 144, 226);
+$color-picton-blue: rgb(39, 183, 229);
+
+// ** Modal **
+$modal-bg: rgba(255, 255, 255, .93);
+$modal-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+
+// ** Other **
+$bg-frame: rgba(255, 255, 255, .75);
